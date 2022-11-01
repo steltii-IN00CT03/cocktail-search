@@ -1,5 +1,39 @@
-*{
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+html{
+  --main: rgb(76, 169, 155);
+  --sec: rgb(19, 180, 180);
+  background-color: var(--main);
+
 }
 
+h1{
+  font-size: 40px;
+}
+
+.coctail_data h1{
+  font-size: 30px;
+}
+
+h2{
+  text-decoration: underline;
+}
+
+*{
+  font-family: "Quicksand";
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.App{
+  margin: 20px;
+}
+
+button{
+  background-color: var(--sec);
+}
+
+input{
+  background-color: var(--sec);
+}
