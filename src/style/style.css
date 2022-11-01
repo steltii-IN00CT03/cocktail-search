@@ -4,19 +4,6 @@ html{
   --main: rgb(76, 169, 155);
   --sec: rgb(19, 180, 180);
   background-color: var(--main);
-
-}
-
-h1{
-  font-size: 40px;
-}
-
-.coctail_data h1{
-  font-size: 30px;
-}
-
-h2{
-  text-decoration: underline;
 }
 
 *{
@@ -26,14 +13,14 @@ h2{
   font-weight: bold;
 }
 
-.App{
-  margin: 20px;
-}
+h1{font-size: 40px;}
 
-button{
-  background-color: var(--sec);
-}
+.coctail_data h1{font-size: 30px;}
 
-input{
-  background-color: var(--sec);
-}
+h2{text-decoration: underline;}
+
+.App{margin: 20px;}
+
+button{background-color: var(--sec);}
+
+input{background-color: var(--sec);}
