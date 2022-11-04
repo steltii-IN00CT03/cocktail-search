@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-html{
+Container{
+  max-width: 30%;
+}
+
+
+
+/* html{
   --main: rgb(76, 169, 155);
   --sec: rgb(19, 180, 180);
   background-color: var(--main);
@@ -19,8 +25,8 @@ h1{font-size: 40px;}
 
 h2{text-decoration: underline;}
 
-.App{margin: 20px;}
+.App{margin: 20px;} */
 
-button{background-color: var(--sec);}
+/* button{background-color: var(--sec);}
 
-input{background-color: var(--sec);}
+input{background-color: var(--sec);} */
