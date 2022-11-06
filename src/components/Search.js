@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Card, InputGroup, Button, FormControl} from 'react-bootstrap';
+import {Container, Card, InputGroup, Button, FormControl, ListGroup} from 'react-bootstrap';
 
 export default function Search() {
 
@@ -21,7 +21,7 @@ export default function Search() {
     }
 
   return (
-    <Container fluid='xl'>
+    <Container fluid='xl' style={{ width: '50%' }}>
         <div id="search_form">
           <h1>Cocktail Search</h1>
           <InputGroup className='mb-3' size='1g'>
@@ -29,37 +29,33 @@ export default function Search() {
               placeholder='Search for a cocktail'
               type='input'
               onKeyPress={e =>{
-                if(e.key == "Enter"){
-                  searchForCocktail(e)
-                }
-              }}
+                if(e.key == "Enter"){searchForCocktail(e)}}}
               onChange={e => setSearchText(e.target.value)}
             />
             <Button onClick={e => searchForCocktail(e)}>
               Search
             </Button>
-            
           </InputGroup>
-          {/* <input type="text" value={searchText} onChange={e => setSearchText(e.target.value)} />
-          <Button onClick={e => searchForCocktail(e)}>Search</Button> */}
         </div>
         {JSON.stringify(cocktailData) != '{}' ?
-          <Card>
-            <Card.Title>{cocktailData.drinks[0].strDrink}</Card.Title>
-            <Card.Subtitle>Glass</Card.Subtitle>
-            <Card.Body>{cocktailData.drinks[0].strGlass}</Card.Body>
-            <Card.Subtitle>Instructions</Card.Subtitle>
-            <Card.Body>{cocktailData.drinks[0].strInstructions}</Card.Body>
-            <Card.Subtitle>Ingredients</Card.Subtitle>
-            <div>
-              <p>{cocktailData.drinks[0].strIngredient1}</p>
-              <p>{cocktailData.drinks[0].strIngredient2}</p>
-              <p>{cocktailData.drinks[0].strIngredient3}</p>
-              <p>{cocktailData.drinks[0].strIngredient4}</p>
-              <p>{cocktailData.drinks[0].strIngredient5}</p>
-              <p>{cocktailData.drinks[0].strIngredient6}</p>
-            </div>
-            <img src={cocktailData.drinks[0].strDrinkThumb} alt="thumbnail" />
+          <Card style={{ width: '100%'}}>
+            <Card.Body>
+              <Card.Title>{cocktailData.drinks[0].strDrink}</Card.Title>
+              <Card.Subtitle>Glass</Card.Subtitle>
+              <Card.Text>{cocktailData.drinks[0].strGlass}</Card.Text>
+              <Card.Subtitle>Instructions</Card.Subtitle>
+              <Card.Text>{cocktailData.drinks[0].strInstructions}</Card.Text>
+              <Card.Header style={{ width: '50%'}}>Ingredients</Card.Header>
+              <ListGroup style={{ width: '50%'}}>
+                <ListGroup.Item>{cocktailData.drinks[0].strIngredient1}</ListGroup.Item>
+                <ListGroup.Item>{cocktailData.drinks[0].strIngredient2}</ListGroup.Item>
+                <ListGroup.Item>{cocktailData.drinks[0].strIngredient3}</ListGroup.Item>
+                <ListGroup.Item>{cocktailData.drinks[0].strIngredient4}</ListGroup.Item>
+                <ListGroup.Item>{cocktailData.drinks[0].strIngredient5}</ListGroup.Item>
+                <ListGroup.Item>{cocktailData.drinks[0].strIngredient6}</ListGroup.Item>
+              </ListGroup>
+              <Card.Img src={cocktailData.drinks[0].strDrinkThumb} alt="thumbnail" />
+            </Card.Body>
           </Card>
           :
           <><h2>-- Error no data --</h2></>
